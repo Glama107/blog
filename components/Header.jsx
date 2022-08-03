@@ -14,6 +14,7 @@ const Header = () => {
 
   return (
     <>
+      <meta name = "theme-color" media = "(prefers-color-scheme: dark)" content = "# 171a1c" />
       <div className="container mx-auto px-10 mb-8">
         <div className="border-b w-full inline-block border-blue-400 py-8">
           <div className="md:float-left block">
