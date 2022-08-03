@@ -1,7 +1,7 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState, useEffect } from "react";
-import { submitComment } from "../services";
+import React, { useState, useEffect } from 'react';
+import { submitComment } from '../services';
 
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false);
@@ -17,18 +17,18 @@ const CommentsForm = ({ slug }) => {
   useEffect(() => {
     setLocalStorage(window.localStorage);
     const initalFormData = {
-      name: window.localStorage.getItem("name"),
-      email: window.localStorage.getItem("email"),
+      name: window.localStorage.getItem('name'),
+      email: window.localStorage.getItem('email'),
       storeData:
-        window.localStorage.getItem("name") ||
-        window.localStorage.getItem("email"),
+        window.localStorage.getItem('name') ||
+        window.localStorage.getItem('email'),
     };
     setFormData(initalFormData);
   }, []);
 
   const onInputChange = (e) => {
     const { target } = e;
-    if (target.type === "checkbox") {
+    if (target.type === 'checkbox') {
       setFormData((prevState) => ({
         ...prevState,
         [target.name]: target.checked,
@@ -56,20 +56,20 @@ const CommentsForm = ({ slug }) => {
     };
 
     if (storeData) {
-      localStorage.setItem("name", name);
-      localStorage.setItem("email", email);
+      localStorage.setItem('name', name);
+      localStorage.setItem('email', email);
     } else {
-      localStorage.removeItem("name");
-      localStorage.removeItem("email");
+      localStorage.removeItem('name');
+      localStorage.removeItem('email');
     }
 
     submitComment(commentObj).then((res) => {
       if (res.createCommentaire) {
         if (!storeData) {
-          formData.name = "";
-          formData.email = "";
+          formData.name = '';
+          formData.email = '';
         }
-        formData.comment = "";
+        formData.comment = '';
         setFormData((prevState) => ({
           ...prevState,
           ...formData,
@@ -125,7 +125,7 @@ const CommentsForm = ({ slug }) => {
             value="true"
           />
           <label className="text-gray-500 cursor-pointer" htmlFor="storeData">
-            {" "}
+            {' '}
             Enregistrer mon pseudo & mon email pour mes prochains commentaires
           </label>
         </div>

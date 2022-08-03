@@ -1,10 +1,10 @@
 /* eslint-disable function-paren-newline */
 /* eslint-disable comma-dangle */
 /* eslint-disable implicit-arrow-linebreak */
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
-import moment from "moment";
+import moment from 'moment';
 
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -25,7 +25,7 @@ const PostDetail = ({ post }) => {
     }
 
     switch (type) {
-      case "heading-three":
+      case 'heading-three':
         return (
           <h3 key={index} className="text-xl font-semibold mb-4">
             {modifiedText.map((item, i) => (
@@ -33,7 +33,7 @@ const PostDetail = ({ post }) => {
             ))}
           </h3>
         );
-      case "paragraph":
+      case 'paragraph':
         return (
           <p key={index} className="mb-8">
             {modifiedText.map((item, i) => (
@@ -41,7 +41,7 @@ const PostDetail = ({ post }) => {
             ))}
           </p>
         );
-      case "heading-four":
+      case 'heading-four':
         return (
           <h4 key={index} className="text-md font-semibold mb-4">
             {modifiedText.map((item, i) => (
@@ -49,7 +49,7 @@ const PostDetail = ({ post }) => {
             ))}
           </h4>
         );
-      case "image":
+      case 'image':
         return (
           <img
             key={index}
@@ -107,7 +107,7 @@ const PostDetail = ({ post }) => {
                 />
               </svg>
               <span className="align-middle dark:text-white">
-                {moment(post.createdAt).format("DD MMM YYYY")}
+                {moment(post.createdAt).format('DD MMM YYYY')}
               </span>
             </div>
           </div>

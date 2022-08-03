@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import moment from "moment";
-import parse from "html-react-parser";
+import React, { useEffect, useState } from 'react';
+import moment from 'moment';
+import parse from 'html-react-parser';
 
-import { getComments } from "../services";
+import { getComments } from '../services';
 
 const Comments = ({ slug }) => {
   const [comments, setComments] = useState([]);
@@ -27,8 +27,8 @@ const Comments = ({ slug }) => {
               className="border-b border-gray-100 mb-4 pb-4 dark:text-white"
             >
               <p className="mb-4">
-                <span className="font-semibold">{comment.nom}</span> le{" "}
-                {moment(comment.createdAt).format("DD MMM YYYY")}
+                <span className="font-semibold">{comment.nom}</span> le{' '}
+                {moment(comment.createdAt).format('DD MMM YYYY')}
               </p>
               <p className="whitespace-pre-line text-gray-600 dark:text-gray-400 w-full">
                 {parse(comment.commentaire)}

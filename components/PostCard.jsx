@@ -1,14 +1,14 @@
-import React from "react";
-import Image from "next/image";
-import moment from "moment";
-import Link from "next/link";
-import Head from "next/head";
+import React from 'react';
+import Image from 'next/image';
+import moment from 'moment';
+import Link from 'next/link';
+import Head from 'next/head';
 
-import "moment/locale/fr";
+import 'moment/locale/fr';
 
-import { grpahCMSImageLoader } from "../util";
+import { grpahCMSImageLoader } from '../util';
 
-moment.locale("fr");
+moment.locale('fr');
 
 const PostCard = ({ post }) => (
   <>
@@ -58,7 +58,7 @@ const PostCard = ({ post }) => (
             />
           </svg>
           <span className="align-middle">
-            {moment(post.createdAt).format("DD MMM YYYY")}
+            {moment(post.createdAt).format('DD MMM YYYY')}
           </span>
         </div>
       </div>
