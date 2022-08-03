@@ -9,9 +9,9 @@ export const getPosts = async () => {
         edges {
           cursor
           node {
-            author {
+            auteur {
               bio
-              name
+              nom
               id
               photo {
                 url
@@ -19,13 +19,13 @@ export const getPosts = async () => {
             }
             createdAt
             slug
-            title
-            excerpt
-            featuredImage {
+            titre
+            extrait
+            image {
               url
             }
             categories {
-              name
+              nom
               slug
             }
           }
@@ -43,7 +43,7 @@ export const getCategories = async () => {
   const query = gql`
     query GetGategories {
         categories {
-          name
+          nom
           slug
         }
     }
@@ -58,13 +58,13 @@ export const getPostDetails = async (slug) => {
   const query = gql`
     query GetPostDetails($slug : String!) {
       post(where: {slug: $slug}) {
-        title
-        excerpt
-        featuredImage {
+        titre
+        extrait
+        image {
           url
         }
-        author{
-          name
+        auteur{
+          nom
           bio
           photo {
             url
@@ -72,11 +72,11 @@ export const getPostDetails = async (slug) => {
         }
         createdAt
         slug
-        content {
+        contenu {
           raw
         }
         categories {
-          name
+          nom
           slug
         }
       }
@@ -95,8 +95,8 @@ export const getSimilarPosts = async (categories, slug) => {
         where: {slug_not: $slug, AND: {categories_some: {slug_in: $categories}}}
         last: 3
       ) {
-        title
-        featuredImage {
+        titre
+        image {
           url
         }
         createdAt
@@ -117,8 +117,8 @@ export const getAdjacentPosts = async (createdAt, slug) => {
         orderBy: createdAt_ASC
         where: {slug_not: $slug, AND: {createdAt_gte: $createdAt}}
       ) {
-        title
-        featuredImage {
+        titre
+        image {
           url
         }
         createdAt
@@ -129,8 +129,8 @@ export const getAdjacentPosts = async (createdAt, slug) => {
         orderBy: createdAt_DESC
         where: {slug_not: $slug, AND: {createdAt_lte: $createdAt}}
       ) {
-        title
-        featuredImage {
+        titre
+        image {
           url
         }
         createdAt
@@ -151,9 +151,9 @@ export const getCategoryPost = async (slug) => {
         edges {
           cursor
           node {
-            author {
+            auteur {
               bio
-              name
+              nom
               id
               photo {
                 url
@@ -161,13 +161,13 @@ export const getCategoryPost = async (slug) => {
             }
             createdAt
             slug
-            title
-            excerpt
-            featuredImage {
+            titre
+            extrait
+            image {
               url
             }
             categories {
-              name
+              nom
               slug
             }
           }
@@ -184,17 +184,17 @@ export const getCategoryPost = async (slug) => {
 export const getFeaturedPosts = async () => {
   const query = gql`
     query GetCategoryPost() {
-      posts(where: {featuredPost: true}) {
-        author {
-          name
+      posts(where: {misEnAvant: true}) {
+        auteur {
+          nom
           photo {
             url
           }
         }
-        featuredImage {
+        image {
           url
         }
-        title
+        titre
         slug
         createdAt
       }
@@ -220,18 +220,16 @@ export const submitComment = async (obj) => {
 
 export const getComments = async (slug) => {
   const query = gql`
-    query GetComments($slug:String!) {
-      comments(where: {post: {slug:$slug}}){
-        name
-        createdAt
-        comment
-      }
+  query GetComments($slug:String!) {
+    commentaires(where: {post: {slug: $slug}}) {
+      nom
+      createdAt
+      commentaire
     }
+  }
   `;
-
   const result = await request(graphqlAPI, query, { slug });
-
-  return result.comments;
+  return result.commentaires;
 };
 
 export const getRecentPosts = async () => {
@@ -241,8 +239,8 @@ export const getRecentPosts = async () => {
         orderBy: createdAt_ASC
         last: 3
       ) {
-        title
-        featuredImage {
+        titre
+        image {
           url
         }
         createdAt
