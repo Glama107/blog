@@ -14,16 +14,16 @@ body {
     content: "";
     width: 100%;
     height: 100vh;
-    //background: linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
+    background: repeating-linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
     // background: #D3D3D3;
-    background-image: url("../public/bg.jpg");
     position: fixed;
     left: 0;
     top: 0;
     z-index: -1;
     background-position: 50% 50%;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
+    background-attachment:scroll;
   }
 }
 
@@ -60,4 +60,19 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #1f2937;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(133deg, rgba(150,148,190,1) 0%, rgba(75,140,144,1) 46%, rgba(57,173,196,1) 100%);
 }

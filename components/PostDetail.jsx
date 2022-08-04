@@ -4,6 +4,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 
 import moment from 'moment';
@@ -54,6 +55,13 @@ const PostDetail = ({ post }) => (
               {moment(post.createdAt).format('DD MMM YYYY')}
             </span>
           </div>
+          <div className="text-center m-2">
+            {post.categories.map((category, index) => (
+              <span key={index} className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-blue-600 text-xs font-medium rounded-full text-white px-4 py-2 cursor-pointer ml-2">
+                <Link href={`/category/${category.slug}`}>{category.nom}</Link>
+              </span>
+            ))}
+          </div>
         </div>
         <h1 className="mb-8 text-3xl font-semibold dark:text-white">
           {post.title}
@@ -62,7 +70,8 @@ const PostDetail = ({ post }) => (
           content={post.contenu.raw}
           renderers={{
             ul: ({ children }) => <ul className="list-disc list-inside pb-6">{children}</ul>,
-            p: ({ children }) => <p className="pb-6">{children}</p>
+            p: ({ children }) => <p className="pb-6">{children}</p>,
+            img: ({ children }) => <img loading="lazy" src={children.props.parent.src} title={children.props.parent.title} alt={children.props.parent.title} className="shadow rounded max-w-full h-auto align-middle border-none mb-3" />
           }}
         />
       </div>

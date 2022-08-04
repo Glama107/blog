@@ -6,6 +6,9 @@ module.exports = {
       spacing: {
         '2/3': '66.666667%',
       },
+      backgroundImage: {
+        light_bg: "url('../public/bg.jpg')",
+      },
     },
   },
   variants: {

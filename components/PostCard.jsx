@@ -24,9 +24,18 @@ const PostCard = ({ post }) => (
         />
       </div>
 
-      <h1 className="transition dark:text-white duration-700 text-center mb-8 cursor-pointer hover:text-pink-600 text-3xl font-semibold">
+      <h1 className="transition dark:text-white duration-700 text-center cursor-pointer hover:text-pink-600 text-3xl font-semibold">
         <Link href={`/post/${post.slug}`}>{post.titre}</Link>
       </h1>
+      <div className="text-center mt-2 mb-2">
+        {post.categories.map((category, index) => (
+
+          <span key={index} className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-blue-600 text-xs font-medium rounded-full text-white px-4 py-2 cursor-pointer ml-2">
+            <Link href={`/category/${category.slug}`}>{category.nom}</Link>
+          </span>
+
+        ))}
+      </div>
       <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
         <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8 items-center">
           <Image
