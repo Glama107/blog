@@ -12,7 +12,7 @@ import moment from 'moment';
 const PostDetail = ({ post }) => (
   <>
     <Head>
-      <title>{post.titre}</title>
+      <title>Blog - {post.titre}</title>
     </Head>
     <div className="bg-white dark:bg-slate-800 shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md mb-6">

@@ -4,6 +4,7 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
+import Head from 'next/head';
 import { submitContact } from '../services';
 
 const Contact = () => {
@@ -55,7 +56,10 @@ const Contact = () => {
     });
   };
   return (
-    <><title>Blog- Contact</title>
+    <>
+      <Head>
+        <title>Blog - Contact</title>
+      </Head>
       <div className="bg-white/80 dark:bg-gray-900/80 m-20 rounded-2xl mt-3 py-8 lg:py-16 px-4 mx-4 md:mx-auto max-w-screen-md">
         <h2 className="mb-4 text-2xl lg:text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
           Contact
@@ -73,7 +77,7 @@ const Contact = () => {
               Votre email
             </label>
             <input
-              type="text"
+              type="email"
               name="email"
               value={formData.comment}
               onChange={onInputChange}
