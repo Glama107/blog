@@ -218,6 +218,19 @@ export const submitComment = async (obj) => {
   return result.json();
 };
 
+export const submitContact = async (obj) => {
+  const result = await fetch('/api/contact', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(obj),
+  });
+
+  console.log(obj);
+  return result.json();
+};
+
 export const getComments = async (slug) => {
   const query = gql`
   query GetComments($slug:String!) {

@@ -16,14 +16,13 @@ const Header = () => {
 
   return (
     <>
-      <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js" />
       <meta name="theme-color" content="#016cec" />
       <header>
-        <nav className="bg-white border-gray-200 px-4 lg:px-6 py-4 mb-3 dark:bg-gray-800">
-          <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-            <a href="https://flowbite.com" className="flex items-center">
-              <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Guillaume</span>
-            </a>
+        <nav className="bg-white/60 border-gray-200 px-4 lg:px-6 py-4 mb-3 dark:bg-gray-800/60">
+          <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl pr-20">
+            <Link href="/" className="flex items-center">
+              <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white cursor-pointer">Guillaume</span>
+            </Link>
             <div className="flex items-center lg:order-2">
               <button data-collapse-toggle="mobile-menu-2" type="button" className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
                 <span className="sr-only">Open main menu</span>
@@ -48,6 +47,13 @@ const Header = () => {
                     </a>
                   </Link>
                 ))}
+                <Link href="/contact">
+                  <a>
+                    <li>
+                      <span className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</span>
+                    </li>
+                  </a>
+                </Link>
               </ul>
             </div>
           </div>
