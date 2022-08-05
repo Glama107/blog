@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const FeaturedPostCard = ({ post }) => (
-  <div className="transition ease-in-out hover: relative h-72">
+  <div className="transition ease-in-out duration-500 hover:-translate-y-1 relative h-72">
     <div
       className="absolute rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-72"
       style={{ backgroundImage: `url('${post.image.url}')` }}
