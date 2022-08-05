@@ -77,7 +77,7 @@ const Contact = () => {
               Votre email
             </label>
             <input
-              type="email"
+              type="text"
               name="email"
               value={formData.comment}
               onChange={onInputChange}
@@ -129,9 +129,10 @@ const Contact = () => {
             Envoyer
           </button>
           {showSuccessMessage && (
-          <span className="text-xl float-right font-semibold mt-3 text-green-500">
-            Votre demande de contact à été envoyée
-          </span>
+            <span className="text-xl float-right font-semibold mt-3 text-green-500">
+              Votre demande de contact à été envoyée
+            </span>
+
           )}
         </form>
       </div>
