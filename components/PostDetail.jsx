@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable function-paren-newline */
 /* eslint-disable comma-dangle */
 /* eslint-disable implicit-arrow-linebreak */
@@ -72,7 +73,7 @@ const PostDetail = ({ post }) => (
             ul: ({ children }) => <ul className="list-disc list-inside pb-6">{children}</ul>,
             p: ({ children }) => <p className="pb-6">{children}</p>,
             a: ({ children }) => <a href={children.props.parent.href} title={children.props.parent.title ? children.props.parent.title : 'Ouvrir le lien'} target="_blank" rel="noreferrer" className="text-indigo-500">{children}</a>,
-            img: ({ children }) => <img loading="lazy" src={children.props.parent.src} title={children.props.parent.title} alt={children.props.parent.title} className="shadow rounded max-w-full h-auto align-middle border-none mb-3" />
+            img: ({ children }) => <a href={children.props.parent.src} target="_blank" rel="noreferrer"><img loading="lazy" src={children.props.parent.src} title={children.props.parent.title} alt={children.props.parent.title} className="shadow rounded max-w-full h-auto align-middle border-none mb-3" /></a>,
           }}
         />
       </div>
