@@ -24,7 +24,6 @@ const PostWidget = ({ categories, slug }) => {
       });
     }
   }, [slug]);
-
   return (
     <div className="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-8 pb-12 mb-8">
       <h3 className="text-xl dark:text-white mb-8 font-semibold border-b pb-4">
@@ -58,5 +57,4 @@ const PostWidget = ({ categories, slug }) => {
     </div>
   );
 };
-
 export default PostWidget;

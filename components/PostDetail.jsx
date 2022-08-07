@@ -20,8 +20,9 @@ const PostDetail = ({ post }) => (
         <img
           src={post.image.url}
           alt=""
-          className="object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
+          className="object-top h-full w-full object-cover shadow-md rounded-t-lg lg:rounded-lg brightness-50"
         />
+        <p className="absolute text-5xl text-white font-bold text-shadow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{post.titre}</p>
       </div>
       <div className="px-4 lg:px-0 dark:text-gray-400">
         <div className="flex items-center mb-8 w-full">
@@ -73,7 +74,7 @@ const PostDetail = ({ post }) => (
             ul: ({ children }) => <ul className="list-disc list-inside pb-6">{children}</ul>,
             p: ({ children }) => <p className="pb-6">{children}</p>,
             a: ({ children }) => <a href={children.props.parent.href} title={children.props.parent.title ? children.props.parent.title : 'Ouvrir le lien'} target="_blank" rel="noreferrer" className="text-indigo-500">{children}</a>,
-            img: ({ children }) => <a href={children.props.parent.src} target="_blank" rel="noreferrer"><img loading="lazy" src={children.props.parent.src} title={children.props.parent.title} alt={children.props.parent.title} className="shadow rounded max-w-full h-auto align-middle border-none mb-3" /></a>,
+            img: ({ children }) => <a href={children.props.parent.src} target="_blank" rel="noreferrer"><img src={children.props.parent.src} title={children.props.parent.title} alt={children.props.parent.title} className="shadow rounded max-w-full h-auto align-middle border-none mb-3" /></a>,
           }}
         />
       </div>
