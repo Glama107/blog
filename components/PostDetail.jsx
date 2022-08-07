@@ -22,7 +22,7 @@ const PostDetail = ({ post }) => (
           alt=""
           className="object-top h-full w-full object-cover shadow-md rounded-t-lg lg:rounded-lg brightness-50"
         />
-        <p className="absolute text-5xl text-white font-bold text-shadow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{post.titre}</p>
+        <p className="absolute text-2xl sm:text-3xl md:text-5xl text-white font-bold text-shadow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{post.titre}</p>
       </div>
       <div className="px-4 lg:px-0 dark:text-gray-400">
         <div className="flex items-center mb-8 w-full">
