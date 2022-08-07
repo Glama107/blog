@@ -20,7 +20,7 @@ const Header = () => {
       <meta name="theme-color" content="#a7e3e9" />
       <header>
         <nav className="bg-white/60 border-gray-200 px-4 lg:px-6 py-4 mb-3 dark:bg-gray-800/60">
-          <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl pr-10">
+          <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl pr-15">
             <Link href="/" className="flex items-center">
               <span className="transition duration-500 self-center text-xl font-semibold whitespace-nowrap dark:text-white cursor-pointer hover:text-pink-600">Guillaume</span>
             </Link>
